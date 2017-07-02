@@ -2,7 +2,7 @@
 
 # Bitshares UI Theming/Modification guide!
 
-This is a draft guide for an older version of the Bitshares-UI, subsequent updates will increase the accuracy/quality of the guide. I'd appreciate any suggestions for change within the guide and any information 
+This is a draft guide for an older version of the Bitshares-UI, subsequent updates will increase the accuracy/quality of the guide. This guide is [MIT licensed & open source on GitHub](https://github.com/grctest/BTS-UI-Customization), I'd appreciate input on the guide & will hapily merge pull requests.
 
 ---
 ## Getting started
@@ -337,7 +337,32 @@ $chat-text-color: #191A1F;
 
 You can list an additional theme within the Bitshares settings, alongside the existing dropdown theme options.
 
-NOTE: Adding an entirely new theme requries translations to be replicated for the new theme, or perhaps simply a reference to the new theme within translation files (further research required).
+#### Providing theme name translations
+
+Searching for the existing theme name 'olDarkTheme' showed entries within each of the translation files located at "\web\app\assets\locales\". 
+
+Within each of the 'locale_xx.json' files (replace xx with language), you need to provide a translation for your new theme within the 'settings' section:
+
+```
+  "settings": {
+    [ irrelevant text ]
+    "themes": "Tema",
+    "darkTheme": "Koyu tema",
+    "lightTheme": "Açık tema",
+    "olDarkTheme": "Openledger koyu",
+    [ irrelevant text ]
+  },
+```
+
+Use similar format:
+
+```
+"yourThemeName": "yourTranslatedThemeName"
+```
+
+Google translate should be sufficient, or if you're lazy you could just provide the english theme name as the translation.
+
+If you do not provide a translation entry, then the theme dropdown will display a translate error!
 
 #### Add an entry for your theme in the following files
 web/app/assets/colors.js
@@ -355,18 +380,23 @@ There are several Bitshares web wallet implementations with different themes, la
 
 ### [Rudex](https://market.rudex.org/?r=customminer)
 
-<a href=""><img src="https://steemitimages.com/DQmWAHrCYiGZvEDaq8KhBkJqR2hjocvKwshHnfUqoWvieWt/image.png" /></a>
-<a href=""><img src="https://steemitimages.com/DQmbK8BRoL4t6C22G4pnY8LDi4qsRiKjM8QvU9q2f4wxMmp/image.png" /></a>
-<a href=""><img src="https://steemitimages.com/DQmYkk7uA1ug42PA5ExiLgMTA1xZcgV1V4WSUYqBcyifrvo/image.png" /></a>
+<a href="https://market.rudex.org/?r=customminer"><img src="https://steemitimages.com/DQmWAHrCYiGZvEDaq8KhBkJqR2hjocvKwshHnfUqoWvieWt/image.png" /></a>
+<a href="https://market.rudex.org/?r=customminer"><img src="https://steemitimages.com/DQmbK8BRoL4t6C22G4pnY8LDi4qsRiKjM8QvU9q2f4wxMmp/image.png" /></a>
+<a href="https://market.rudex.org/?r=customminer"><img src="https://steemitimages.com/DQmYkk7uA1ug42PA5ExiLgMTA1xZcgV1V4WSUYqBcyifrvo/image.png" /></a>
 
 ### [Openledger](https://openledger.io/?r=customminer)
 
-<a href=""><img src="https://steemitimages.com/DQmeQqkreG5PdPtaqaABkxFKNb3u9azJBAT3RUUEkZdZ5gL/image.png" /></a>
-<a href=""><img src="https://steemitimages.com/DQmaFujQLKxfFfFjFy45wDtgDzp3Y5T1zU22R3FXamfXFtA/image.png" /></a>
-<a href=""><img src="https://steemitimages.com/DQmbaab47K4AGAVmDQ3HfLm7GjsERPuQqFeQq7gp8rycZ1y/image.png" /></a>
+<a href="https://openledger.io/?r=customminer"><img src="https://steemitimages.com/DQmeQqkreG5PdPtaqaABkxFKNb3u9azJBAT3RUUEkZdZ5gL/image.png" /></a>
+<a href="https://openledger.io/?r=customminer"><img src="https://steemitimages.com/DQmaFujQLKxfFfFjFy45wDtgDzp3Y5T1zU22R3FXamfXFtA/image.png" /></a>
+<a href="https://openledger.io/?r=customminer"><img src="https://steemitimages.com/DQmbaab47K4AGAVmDQ3HfLm7GjsERPuQqFeQq7gp8rycZ1y/image.png" /></a>
 
 ### [BTSABC](https://bit.btsabc.org/?r=customminer)
 
-<a href=""><img src="https://steemitimages.com/DQmQ9ssS59YW9PdZcGQUpXgaErPAdkh9Eudo5DouUA4pksG/image.png" /></a>
-<a href=""><img src="https://steemitimages.com/DQmYqNvnpYipUy6xJJcnzRmG25rXjxjzSpmLkXn5CGt8UMm/image.png" /></a>
-<a href=""><img src="https://steemitimages.com/DQmcKUz7N2iw3X2iVxADEp9Jf6UM6xcVQ9utDcYfieX8dBb/image.png" /></a>
+<a href="https://bit.btsabc.org/?r=customminer"><img src="https://steemitimages.com/DQmQ9ssS59YW9PdZcGQUpXgaErPAdkh9Eudo5DouUA4pksG/image.png" /></a>
+<a href="https://bit.btsabc.org/?r=customminer"><img src="https://steemitimages.com/DQmYqNvnpYipUy6xJJcnzRmG25rXjxjzSpmLkXn5CGt8UMm/image.png" /></a>
+<a href="https://bit.btsabc.org/?r=customminer"><img src="https://steemitimages.com/DQmcKUz7N2iw3X2iVxADEp9Jf6UM6xcVQ9utDcYfieX8dBb/image.png" /></a>
+
+---
+
+Best regards,
+@CM-Steem
